@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env/
+.venv/
+venv/
+ENV/
+env/
+*.egg-info/
+dist/
+build/
+
+# VSCode
+.vscode/
+
+# Dados e modelos
+data/*.joblib
+data/*.pkl
+*.log
+
+# Testes
+htmlcov/
+.coverage
+.cache
+pytest_cache/
+
+# Sistema
+.DS_Store
+Thumbs.db
