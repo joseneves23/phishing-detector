@@ -35,8 +35,26 @@
         }
     </style>
 </head>
+
+
+
+
+
 <body>
     <div class="container">
+
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 2000;">
+        <div id="urlToast" class="toast bg-danger text-white border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-danger text-white border-0">
+                <strong class="me-auto">Erro de Validação</strong>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Por favor, insira uma URL válida (ex: https://www.exemplo.com).
+            </div>
+        </div>
+    </div>
+
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="card shadow">
@@ -155,13 +173,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let currentUrl = '';
-        
+
+        function isValidUrl(url) {
+            try {
+                // Adiciona protocolo se faltar para validação
+                const testUrl = url.match(/^https?:\/\//) ? url : 'http://' + url;
+                new URL(testUrl);
+                // Verifica se tem pelo menos um ponto no domínio
+                return /\./.test(url);
+            } catch {
+                return false;
+            }
+        }
+
         document.getElementById('analyzeForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
+
             const url = document.getElementById('urlInput').value.trim();
-            if (!url) return;
-            
+            if (!url || !isValidUrl(url)) {
+                const toast = new bootstrap.Toast(document.getElementById('urlToast'));
+                toast.show();
+                return;
+            }
+
             currentUrl = url;
             analyzeUrl(url);
         });
