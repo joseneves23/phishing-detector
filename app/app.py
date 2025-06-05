@@ -93,7 +93,8 @@ def bulk_analyze():
                 'url': url,
                 'is_phishing': result['is_phishing'],
                 'confidence': result['confidence'],
-                'risk_level': result['risk_level']
+                'risk_level': result['risk_level'],
+                'top_indicators': result.get('top_indicators', [])
             })
         
         return jsonify({'results': results})
