@@ -2,26 +2,26 @@ import glob
 
 # Lista de sites legítimos (adicione mais se quiser)
 legit_urls = [
-    "http://www.apple.com",
-    "http://www.microsoft.com",
-    "http://www.google.com",
-    "http://www.amazon.com",
-    "http://www.facebook.com",
-    "http://www.twitter.com",
-    "http://www.linkedin.com",
-    "http://www.instagram.com",
-    "http://www.netflix.com",
-    "http://www.paypal.com",
-    "http://www.reddit.com",
-    "http://www.wikipedia.org",
-    "http://www.github.com",
-    "http://www.stackoverflow.com",
-    "http://www.youtube.com",
-    "http://www.ebay.com",
-    "http://www.bbc.com",
-    "http://www.cnn.com",
-    "http://www.nytimes.com",
-    "http://www.forbes.com"
+    "https://www.apple.com",
+    "https://www.microsoft.com",
+    "https://www.google.com",
+    "https://www.amazon.com",
+    "https://www.facebook.com",
+    "https://www.twitter.com",
+    "https://www.linkedin.com",
+    "https://www.instagram.com",
+    "https://www.netflix.com",
+    "https://www.paypal.com",
+    "https://www.reddit.com",
+    "https://www.wikipedia.org",
+    "https://www.github.com",
+    "https://www.stackoverflow.com",
+    "https://www.youtube.com",
+    "https://www.ebay.com",
+    "https://www.bbc.com",
+    "https://www.cnn.com",
+    "https://www.nytimes.com",
+    "https://www.forbes.com"
 ]
 
 # Caminho para os ficheiros de phishing (ajuste conforme necessário)
